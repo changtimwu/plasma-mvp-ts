@@ -12,6 +12,17 @@
     "coverage": "jest --coverage",
     "lint": "tslint --project package.json"
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$"
+  },
   "dependencies": {
     "bn.js": "changtimwu/bn.js",
     "eth-sig-util": "changtimwu/eth-sig-util",
@@ -28,6 +39,7 @@
     "ethereumjs-util": "^5.1.5",
     "ganache-core": "^2.1.0",
     "jest": "^23.0.0",
+    "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "typedoc": "^0.11.1",
     "typedoc-plugin-markdown": "^1.0.14",
