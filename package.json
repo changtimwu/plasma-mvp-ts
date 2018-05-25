@@ -1,0 +1,39 @@
+{
+  "name": "plasma-wallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "cp types/web3/* node_modules/web3/",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "lint": "tslint --project package.json"
+  },
+  "dependencies": {
+    "bn.js": "changtimwu/bn.js",
+    "eth-sig-util": "changtimwu/eth-sig-util",
+    "js-sha3": "^0.7.0",
+    "node-fetch": "^2.1.1",
+    "rlp": "^2.0.0",
+    "solc": "^0.4.21",
+    "web3": "^1.0.0-beta.34"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.4.6",
+    "@types/node-fetch": "^1.6.7",
+    "ethereumjs-util": "^5.1.5",
+    "ganache-core": "^2.1.0",
+    "jest": "^23.0.0",
+    "tslint": "^5.10.0",
+    "typedoc": "^0.11.1",
+    "typedoc-plugin-markdown": "^1.0.14",
+    "types-ethereumjs-util": "^0.0.7",
+    "typescript": "^2.8"
+  },
+  "author": "changtimwu@gmail.com",
+  "license": "ISC"
+}
