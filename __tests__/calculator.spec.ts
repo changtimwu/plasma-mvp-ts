@@ -13,7 +13,7 @@ describe("Calculator", () => {
             expect(result).toEqual(102)
         })
     })
-    describe.skip("try sinon", () => {
+    describe("try sinon", () => {
         class JQ {
             name: 'JQ'
             dumptime: 0
@@ -31,18 +31,21 @@ describe("Calculator", () => {
             }
         }
         it("stub usage 1", () => {
-            let callback = sinon.stub().returns(42)
-            console.log(' stub created returns =', callback())
+            let stub = jest.fn()
+            let callback = stub.mockReturnValue(42)
+            expect(callback()).toEqual(42)
         })
         it("stub usage 2", () => {
-            var callback = sinon.stub();
-            callback.withArgs(42).returns(1);
-            callback.withArgs(1).returns('name')
-            expect(callback(42)).to.equal(1)
-            expect(callback(1)).to.equal('name')
-
+            let callback = jest.fn((x) => {
+                if (x === 42)
+                    return 1
+                else if (x === 1)
+                    return 'name'
+            })
+            expect(callback(42)).toEqual(1)
+            expect(callback(1)).toEqual('name')
         })
-        it("stub usage 3", () => {
+        it.skip("stub usage 3", () => {
             let mockchain = {
                 methods: {
                     submitBlock: sinon.stub().returns({ send: sinon.stub() })
@@ -60,7 +63,7 @@ describe("Calculator", () => {
             //assert(spy1.called)
             //assert(spy2.called)
         })
-        it("spy usage 1", () => {
+        it.skip("spy usage 1", () => {
             let jq = new JQ()
             let incspy = sinon.spy(jq, 'dumpinc')
             jq.dump()
@@ -68,7 +71,7 @@ describe("Calculator", () => {
             incspy.restore()
             sinon.assert.callCount(incspy, 2)
         })
-        it("spy usage 2", () => {
+        it.skip("spy usage 2", () => {
             let jq = new JQ()
             let ajaxspy = sinon.spy(jq, 'ajax')
             let aobj = { url: 'https://qq.url' }
