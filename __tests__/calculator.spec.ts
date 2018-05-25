@@ -1,21 +1,19 @@
-import { expect, assert } from 'chai'
 import Calculator from '../src/calculator'
-import * as sinon from 'sinon'
 
 describe("Calculator", () => {
     describe("Add", () => {
         it("Should return 3 when a = 1 and b = 2", () => {
             let calc = new Calculator()
             var result = calc.Add(1, 2)
-            expect(result).to.equal(3)
+            expect(result).toEqual(3)
         })
         it("Should return 102 when a = 100 and b = 2", () => {
             let calc = new Calculator()
             var result = calc.Add(100, 2)
-            expect(result).to.equal(102)
+            expect(result).toEqual(102)
         })
     })
-    describe("try sinon", () => {
+    describe.skip("try sinon", () => {
         class JQ {
             name: 'JQ'
             dumptime: 0
@@ -79,11 +77,11 @@ describe("Calculator", () => {
             sinon.assert.calledWith(ajaxspy, { url: 'https://qq.url' })
         })
     })
-    describe.skip("Slowly Add", () => {
+    describe("Slowly Add", () => {
         it("Should return 3 when a = 1 and b = 2", async () => {
             let calc = new Calculator()
             var result = await calc.SlowAdd(1, 2)
-            expect(result).to.equal(3)
+            expect(result).toEqual(3)
         })
     })
 })
