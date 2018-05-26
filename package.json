@@ -19,7 +19,7 @@
     ],
     "transform": {
       "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
-      "\\.(ts)$": "ts-jest"
+      "^.+\\.(ts)$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$"
   },
@@ -39,6 +39,7 @@
     "ethereumjs-util": "^5.1.5",
     "ganache-core": "^2.1.0",
     "jest": "^23.0.0",
+    "sinon": "^5.0.10",
     "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "typedoc": "^0.11.1",
