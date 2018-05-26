@@ -1,4 +1,4 @@
-import Calculator from '../src/calculator'
+import Calculator from '../calculator'
 describe("Calculator", () => {
     describe("Add", () => {
         it("Should return 3 when a = 1 and b = 2", () => {
